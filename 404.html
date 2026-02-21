@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RutaLimpia | Monitoreo de recolección</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>RutaLimpia</h1>
+      <p>Seguimiento y alertas de desvío para camiones recolectores</p>
+    </header>
+
+    <main>
+      <section class="kpi-grid" aria-label="Indicadores operativos">
+        <article class="kpi-card">
+          <h2>Camiones activos</h2>
+          <p id="kpi-active">0</p>
+        </article>
+        <article class="kpi-card warning">
+          <h2>Alertas activas</h2>
+          <p id="kpi-alerts">0</p>
+        </article>
+        <article class="kpi-card">
+          <h2>Rutas completadas</h2>
+          <p id="kpi-routes">0</p>
+        </article>
+        <article class="kpi-card">
+          <h2>Incidencias abiertas</h2>
+          <p id="kpi-incidents">0</p>
+        </article>
+      </section>
+
+      <section class="layout">
+        <article class="panel">
+          <h2>Mapa operativo (simulado)</h2>
+          <p class="hint">Referencia visual de ruta (línea) y camiones (puntos).</p>
+          <svg id="map" viewBox="0 0 600 320" role="img" aria-label="Mapa de camiones"></svg>
+        </article>
+
+        <article class="panel">
+          <h2>Camiones</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Unidad</th>
+                <th>Estado</th>
+                <th>Ruta</th>
+              </tr>
+            </thead>
+            <tbody id="truck-table"></tbody>
+          </table>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Centro de alertas de desviación</h2>
+        <p class="hint">Una alerta se activa cuando un camión se aleja de su recorrido planificado.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Hora</th>
+              <th>Unidad</th>
+              <th>Severidad</th>
+              <th>Detalle</th>
+            </tr>
+          </thead>
+          <tbody id="alert-table"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <small>MVP demostrativo para GitHub Pages. Si ves este panel, el error 404 quedó resuelto.</small>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

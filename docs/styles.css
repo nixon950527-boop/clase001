@@ -1,0 +1,144 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --bg: #f7f8fb;
+  --panel: #ffffff;
+  --primary: #2056d8;
+  --ok: #0c8b4f;
+  --warn: #d47300;
+  --danger: #c22727;
+  --border: #dde3ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #1d2433;
+}
+
+header,
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #0f1a34;
+  color: #fff;
+}
+
+header p {
+  margin-top: 0.35rem;
+  opacity: 0.85;
+}
+
+main {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.kpi-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+.kpi-card p {
+  font-size: 2rem;
+  margin: 0.3rem 0 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.kpi-card.warning p {
+  color: var(--warn);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+#map {
+  width: 100%;
+  border: 1px dashed #bcc8e0;
+  border-radius: 8px;
+  background: #f9fbff;
+}
+
+.hint {
+  margin-top: -0.25rem;
+  color: #56617a;
+  font-size: 0.9rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 0.35rem;
+  text-align: left;
+}
+
+.status {
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status.on-route {
+  background: #dff6ea;
+  color: var(--ok);
+}
+
+.status.off-route {
+  background: #ffe6e6;
+  color: var(--danger);
+}
+
+.sev {
+  font-weight: 700;
+}
+
+.sev.baja {
+  color: var(--ok);
+}
+
+.sev.media {
+  color: var(--warn);
+}
+
+.sev.alta {
+  color: var(--danger);
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
